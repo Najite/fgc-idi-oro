@@ -10,6 +10,7 @@ require("dotenv").config();
 
 // // import routes
 const eventRoute = require("./routes/eventRoute");
+const streamRoute = require("./routes/streamRoute");
 
 // configure upload directory
 const uploadsDir = path.join(__dirname, "uploads");
@@ -46,6 +47,7 @@ app.use(cors({
 
 // configure routes
 app.use("/api/events/", eventRoute);
+app.use("/api/stream/", streamRoute);
 
 
 
