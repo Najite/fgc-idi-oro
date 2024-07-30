@@ -21,4 +21,4 @@ const streamSchema = new Schema({
 })
 
 
-exports.modules = model("Stream", streamSchema);
+module.exports = model("Stream", streamSchema);
