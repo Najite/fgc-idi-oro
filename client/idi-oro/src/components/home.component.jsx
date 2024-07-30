@@ -29,26 +29,33 @@ const Home = () => {
     if (error) return <p>{error}</p>
 
     return (
-        <div>
+        <div className="container mx-auto p-4">
             <h2>Latest event</h2>
+            <div>
             {
                 latestEvent ? (
-                    <div>
-                        <h3>{event.title}</h3>
+                    <div className="flex items-start space-x-4 border p-4 rounded-lg shadow-lg">
+                        
                         {latestEvent.imageUrl ? (
-                            <img 
+                            <img className="w-1/3 h-auto rounded-lg"
                             src= {latestEvent.imageUrl} 
                             alt= {latestEvent.title}
-                            style={{ maxWidth: '50%'}}
                             />
                         ) : (
-                            <p>No image available</p>
+                            <p className="text-gray-500">No image available</p>
                         )}
+
+                        <div className="w-2/3">
+                        <h3 className="text-2xl font-bold mb-2">{latestEvent.title}</h3>
+
+                        </div>
+                    
                     </div>
                 ) : (
                     <p>No event available</p>
                 )
             }
+            </div>
         </div>
     );
 };

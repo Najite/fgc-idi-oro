@@ -39,7 +39,7 @@ const EventsPage = () => {
         if (error) return <p>{error}</p>
 
         return (
-            <div>
+            <div className="w-1/2 mx-auto p-4 bg-red-500">
                 <EventList events={events} setEvents={setEvents}/>
                 <EventForm onEventCreated={handleEventCreation} />
 
