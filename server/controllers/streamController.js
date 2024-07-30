@@ -27,6 +27,26 @@ const createStream = async (req, res) => {
     }
 };
 
+
+const getAllStreams = async (req, res) => {
+    try {
+        const streams = await Stream.find()
+
+        res.status(201).json({
+            success: true,
+            data: streams
+        });
+    } catch (error) {
+        console.error("Error fetching stream: ", error);
+        res.status(500).json({
+            success: false,
+            message: "failed to fetch stream",
+            error: error.message
+        });
+    };
+};
+
+
 // stream deletion
 const deleteStream = async (req, res) => {
     try {
@@ -56,5 +76,6 @@ const deleteStream = async (req, res) => {
 
 module.exports = {
     createStream,
+    getAllStreams,
     deleteStream
 }
