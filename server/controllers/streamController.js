@@ -1,5 +1,7 @@
 const Stream = require("../models/Stream");
 
+
+// stream creation
 const createStream = async (req, res) => {
     try {
         const { title, streamUrl } = req.body;
@@ -25,7 +27,7 @@ const createStream = async (req, res) => {
     }
 };
 
-
+// stream deletion
 const deleteStream = async (req, res) => {
     try {
         const {id} = req.params.id
