@@ -50,11 +50,11 @@ const getAllStreams = async (req, res) => {
 // stream deletion
 const deleteStream = async (req, res) => {
     try {
-        const {id} = req.params.id
+        const {id} = req.params
         const deletedStream = await Stream.findByIdAndDelete(id);
 
         if (!deletedStream) {
-            return res.status(401).json({
+            return res.status(404).json({
                 success: false,
                 message: "failed to delete stream"
             });
