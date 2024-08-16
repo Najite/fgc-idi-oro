@@ -9,7 +9,7 @@ const EventList = ({ events, setEvents }) => {
             setEvents(prevEvents => prevEvents.filter(event => event._id !== id));
             alert("Event deleted successfully");
         } catch (error) {
-            console.error("Error deleting event:", error);
+                console.error("Error deleting event:", error);
             alert("Failed to delete event")
         }
     };

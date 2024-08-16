@@ -28,9 +28,9 @@ const EventsPage = () => {
             await createEvent(newEvent);
 
             const result = await fetchEvents()
-            setEvents(result.data);
+            setEvents(result);
         } catch (err) {
-            setError("Failed to create effect")
+            setError("Failed to create event")
         }
     };
 
