@@ -28,12 +28,12 @@ const SlideShow = ({ banners }) => {
                             alt={banner.title}
                             className="w-full h-full object-cover"
                         />
-                                    <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                                    <div className="absolute inset-0 bg-purple-800 bg-opacity-30"></div>
 
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-                            <h2 className="text-4xl md:text-6xl font-bold mb-4">
+                            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-yellow-300 mb-6">
                             {banner.title}</h2>
-                            
+
                         </div>
                     
                     </div>
