@@ -5,12 +5,14 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const fs = require("fs");
 const path = require("path");
+const fileUpload = require("express-fileupload");
 require("dotenv").config();
 
 
 // // import routes
 const eventRoute = require("./routes/eventRoute");
 const streamRoute = require("./routes/streamRoute");
+const bannerRoute = require("./routes/bannerRoute");
 
 // configure upload directory
 const uploadsDir = path.join(__dirname, "uploads");
@@ -23,6 +25,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
+app.use(fileUpload())
 app.use(morgan("dev"));
 
 
@@ -48,6 +51,7 @@ app.use(cors({
 // configure routes
 app.use("/api/events/", eventRoute);
 app.use("/api/stream/", streamRoute);
+app.use("/api/banner/", bannerRoute);
 
 
 
